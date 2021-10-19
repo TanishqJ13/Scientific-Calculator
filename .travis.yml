@@ -5,9 +5,9 @@ env:
 - IMGNAME=tanishqj13/scientific-calculator:latest
 services: 
 - docker
-before_install: 
+script: 
+- mvn clean install                                    
 - docker image build -t ${IMGNAME}
-script: mvn clean install                                    
 deploy: 
   provider: pages
   skip-cleanup: true
