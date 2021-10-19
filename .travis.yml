@@ -1,13 +1,11 @@
 language: java                                            
 jdk:                                                     
 - openjdk8
-env:
-- IMGNAME=tanishqj13/scientific-calculator:latest
 services: 
 - docker
 script: 
 - mvn clean install                                    
-- docker build -t ${IMGNAME}
+- docker build -t tanishqj13/scientific-calculator
 deploy: 
   provider: pages
   skip-cleanup: true
