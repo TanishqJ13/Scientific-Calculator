@@ -7,7 +7,7 @@ services:
 - docker
 script: 
 - mvn clean install                                    
-- docker image build -t ${IMGNAME}
+- docker build -t ${IMGNAME}
 deploy: 
   provider: pages
   skip-cleanup: true
