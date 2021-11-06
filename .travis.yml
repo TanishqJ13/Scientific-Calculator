@@ -4,14 +4,15 @@ jdk:
 services: 
 - docker
 script: 
-- mvn clean install                                    
+- mvn clean install
 after_success:
 - docker build -t tanishqj13/scientific-calculator
-deploy: 
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  on:
-    branch: master
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+#deploy: 
+#  provider: pages
+#  skip-cleanup: true
+#  github-token: $GITHUB_TOKEN
+#  on:
+#    branch: master
 notifications:
   email: tanishq.jaswani@iiitb.ac.in
